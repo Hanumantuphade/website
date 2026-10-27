@@ -2,7 +2,7 @@ version: 0.2
 
 env:
   variables:
-    AWS_ACCOUNT_ID: "289857919920"
+    AWS_ACCOUNT_ID: "916651624562"
     REPOSITORY_NAME: "website"
     CONTAINER_NAME: "website"
     CLUSTER_NAME: "websitecluster"
@@ -12,7 +12,7 @@ phases:
   pre_build:
     commands:
       - echo Logging in to Amazon ECR...
-      - aws ecr get-login-password --region $AWS_DEFAULT_REGION | docker login --username AWS --password-stdin $AWS_ACCOUNT_ID.dkr.ecr.$AWS_DEFAULT_REGION.amazonaws.com
+      - aws ecr get-login-password --region ap-south-1 | docker login --username AWS --password-stdin 916651624562.dkr.ecr.ap-south-1.amazonaws.com
       - REPOSITORY_URI=$AWS_ACCOUNT_ID.dkr.ecr.$AWS_DEFAULT_REGION.amazonaws.com/$REPOSITORY_NAME
   build:
     commands:
